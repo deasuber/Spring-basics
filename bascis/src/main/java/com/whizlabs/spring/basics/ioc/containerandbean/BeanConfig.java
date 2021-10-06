@@ -8,12 +8,12 @@ public class BeanConfig {
     Address getAddress(){
         return new Address(200,"King Avenue");
     }
-
     @Bean
-    Person getPerson() {
+    Person getPerson(){
         Person person = new Person();
         person.setFullName("Jane Roe");
         person.setAddress(getAddress());
         return person;
     }
+
 }

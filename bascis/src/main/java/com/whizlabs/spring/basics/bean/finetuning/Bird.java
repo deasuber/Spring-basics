@@ -1,8 +1,10 @@
 package com.whizlabs.spring.basics.bean.finetuning;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class Bird  implements Animal{
     @Override
     public String move() {

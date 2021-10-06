@@ -3,6 +3,7 @@ package com.whizlabs.spring.basics.bean.finetuning;
 import org.springframework.stereotype.Component;
 
 @Component
+@DogQualifier
 public class Dog implements Animal{
     @Override
     public String move() {
