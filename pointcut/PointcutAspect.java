@@ -29,4 +29,25 @@ public class PointcutAspect {
     private void executionAdvice() {
         System.out.println("Printed by executionAdvice");
     }
+
+    @Pointcut("within(com.whizlabs.spring.basics.aop.pointcut..*) && noParamExecutionPointcut()")
+    private void withinPointcut(){}
+
+    @Before("withinPointcut()")
+    private void withinPointcutAdvice(){
+        System.out.println("Printed by withinAdvice");
+    }
+
+    @Pointcut("target(com.whizlabs.spring.basics.aop.pointcut.service.LogService)")
+    private void targetPointcut() {}
+
+    @Before("targetPointcut() && execution(void log(..))")
+    private void targetAdvice(){
+        System.out.println("Printed by targetAdvice");
+    }
+
+    @Before("bean(getPerson) && execution(* printFullName())")
+    private void beanAdvice(){
+        System.out.println("Printed by beanAdvice");
+    }
 }
